@@ -33,7 +33,11 @@ class SendOrderViewController: UIViewController {
     // MARK: - Action
    
     @IBAction func sendOrderAction(_ sender: UIButton) {
-        // Configure
+        let name = nameTextField.text
+        let address = addressTextField.text
+        let alert = UIAlertController(title: "Delivery for \(name ?? "you").", message: "Your items will be delivered to \(address ?? "your home") in 15 minutes!", preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+        self.present(alert, animated: true)
     }
    
     // MARK: - Methods
