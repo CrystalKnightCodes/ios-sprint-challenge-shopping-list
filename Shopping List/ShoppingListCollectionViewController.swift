@@ -13,7 +13,6 @@ private let reuseIdentifier = "itemCell"
 class ShoppingListCollectionViewController: UICollectionViewController {
 
     // MARK: - Properties
-    var shoppingList: [ShoppingItem] = []
     let shoppingItemController = ShoppingItemController()
     var orderDetailViewController: SendOrderViewController?
     let itemCell = ShoppingItemCollectionViewCell()
@@ -32,13 +31,13 @@ class ShoppingListCollectionViewController: UICollectionViewController {
     // MARK: - Data Source
 
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return shoppingList.count
+        return shoppingItemController.shoppingList.count
     }
 
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath) as! ShoppingItemCollectionViewCell
     
-        let shoppingItem = shoppingItemController.shoppingList [indexPath.item]
+        let shoppingItem = shoppingItemController.shoppingList[indexPath.item]
     cell.item = shoppingItem
             shoppingItemController.saveToPersistentStore()
     

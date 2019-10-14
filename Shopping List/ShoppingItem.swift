@@ -15,12 +15,10 @@ class ShoppingItem: Codable, Equatable {
     
     let name: String
     var hasBeenAdded: Bool
-    let image: String
-
+    
     
     init(name: String) {
         self.name = name
         self.hasBeenAdded = false
-        self.image = name
     }
 }
