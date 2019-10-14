@@ -9,7 +9,14 @@
 import UIKit
 
 class SendOrderViewController: UIViewController {
-
+// MARK: - Outlets
+    
+    @IBOutlet weak var numberOfItemsLabel: UILabel!
+    @IBOutlet weak var nameTextField: UITextField!
+    @IBOutlet weak var addressTextField: UITextField!
+    @IBOutlet weak var sendOrderAction: UIButton!
+    
+    // MARK: - View
     override func viewDidLoad() {
         super.viewDidLoad()
 

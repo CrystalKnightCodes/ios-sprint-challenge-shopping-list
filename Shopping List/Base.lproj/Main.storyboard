@@ -93,6 +93,12 @@
                         <viewLayoutGuide key="safeArea" id="9k1-FG-35c"/>
                     </view>
                     <navigationItem key="navigationItem" id="KVm-fS-1Nx"/>
+                    <connections>
+                        <outlet property="addressTextField" destination="Ipk-ob-3Vc" id="eJb-67-Ghu"/>
+                        <outlet property="nameTextField" destination="1Xq-f2-HgI" id="SW4-SU-GfL"/>
+                        <outlet property="numberOfItemsLabel" destination="OLV-Qn-UmN" id="cDO-O4-iQW"/>
+                        <outlet property="sendOrderAction" destination="OgW-ln-9Ky" id="a6z-Fe-ETm"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fXp-vK-SVR" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
