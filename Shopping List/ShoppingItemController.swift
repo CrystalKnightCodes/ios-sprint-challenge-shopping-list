@@ -20,17 +20,7 @@ class ShoppingItemController {
         return documents.appendingPathComponent("Info.plist")
     }()
     
-    // Array of added items
-    var addedItems: [ShoppingItem] {
-        let addItem = shoppingList.filter { $0.hasBeenAdded }
-        return addItem
-    }
-    
-    // Array of not added items
-    var notAddedItems: [ShoppingItem] {
-        let unaddedItem = shoppingList.filter { !$0.hasBeenAdded }
-        return unaddedItem
-    }
+
     
     // MARK: - Initialize
     init() {
@@ -51,6 +41,18 @@ class ShoppingItemController {
     func toggleListed(item: ShoppingItem) {
         guard let itemNumber = shoppingList.firstIndex(of: item) else { return }
         shoppingList[itemNumber].hasBeenAdded.toggle()
+    }
+    
+    // Create Array of added items
+    func addedItems() -> [ShoppingItem] {
+        let addedItem = shoppingList.filter { $0.hasBeenAdded }
+        return addedItem
+    }
+    
+    // Create array of not added items
+    func notAddedItems() -> [ShoppingItem] {
+        let unaddedItem = shoppingList.filter { !$0.hasBeenAdded }
+        return unaddedItem
     }
     
     // Save current list
@@ -81,3 +83,5 @@ class ShoppingItemController {
         }
     }
 }
+
+

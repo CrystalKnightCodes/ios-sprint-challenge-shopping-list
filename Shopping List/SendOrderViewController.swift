@@ -21,11 +21,13 @@ class SendOrderViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         updateViews()
-        // Do any additional setup after loading the view.
     }
     
     func updateViews() {
-        // numberOfItemsLabel.text = "You currently have \() items in your shopping list."
+        let shoppingList = ShoppingItemController()
+        let addedItemsList = ShoppingItemController.addedItems(shoppingList)
+        let number = addedItemsList().count
+        numberOfItemsLabel.text = "You currently have \(number) items in your shopping list."
     }
     
     // MARK: - Action
