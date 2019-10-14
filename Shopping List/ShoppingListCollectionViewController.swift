@@ -60,6 +60,11 @@ class ShoppingListCollectionViewController: UICollectionViewController {
             }
     }
 
+    override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+       let shoppingItem = shoppingItemController.shoppingList[indexPath.item]
+            shoppingItemController.toggleListed(item: shoppingItem)
+        collectionView.reloadData()
+    }
 
     // MARK: UICollectionViewDelegate
 
