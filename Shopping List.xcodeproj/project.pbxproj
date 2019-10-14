@@ -15,6 +15,7 @@
 		BA24E6372353F8160092DE22 /* ShoppingItemController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA24E6362353F8160092DE22 /* ShoppingItemController.swift */; };
 		BA24E6392353F9520092DE22 /* ShoppingListCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA24E6382353F9520092DE22 /* ShoppingListCollectionViewController.swift */; };
 		BA24E63C2353FC120092DE22 /* SendOrderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA24E63B2353FC120092DE22 /* SendOrderViewController.swift */; };
+		BA24E63E23540C940092DE22 /* ShoppingItemCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA24E63D23540C940092DE22 /* ShoppingItemCollectionViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +29,7 @@
 		BA24E6362353F8160092DE22 /* ShoppingItemController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShoppingItemController.swift; sourceTree = "<group>"; };
 		BA24E6382353F9520092DE22 /* ShoppingListCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShoppingListCollectionViewController.swift; sourceTree = "<group>"; };
 		BA24E63B2353FC120092DE22 /* SendOrderViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SendOrderViewController.swift; sourceTree = "<group>"; };
+		BA24E63D23540C940092DE22 /* ShoppingItemCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShoppingItemCollectionViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,6 +64,7 @@
 			children = (
 				4613E91121143BFC00E7FF73 /* AppDelegate.swift */,
 				4613E91521143BFC00E7FF73 /* Main.storyboard */,
+				BA24E63F23540C990092DE22 /* View */,
 				BA24E63A2353F9580092DE22 /* View Controller */,
 				BA24E6352353F6FD0092DE22 /* Model */,
 				4613E91821143BFD00E7FF73 /* Assets.xcassets */,
@@ -87,6 +90,14 @@
 				BA24E63B2353FC120092DE22 /* SendOrderViewController.swift */,
 			);
 			name = "View Controller";
+			sourceTree = "<group>";
+		};
+		BA24E63F23540C990092DE22 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				BA24E63D23540C940092DE22 /* ShoppingItemCollectionViewCell.swift */,
+			);
+			name = View;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -161,6 +172,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				BA24E6392353F9520092DE22 /* ShoppingListCollectionViewController.swift in Sources */,
+				BA24E63E23540C940092DE22 /* ShoppingItemCollectionViewCell.swift in Sources */,
 				BA24E6342353F6F80092DE22 /* ShoppingItem.swift in Sources */,
 				BA24E6372353F8160092DE22 /* ShoppingItemController.swift in Sources */,
 				4613E91221143BFC00E7FF73 /* AppDelegate.swift in Sources */,
