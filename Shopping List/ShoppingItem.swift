@@ -8,12 +8,15 @@
 
 import Foundation
 
-class ShoppingItem {
-    var name: String
+class ShoppingItem: Codable {
+    let name: String
     var hasBeenAdded: Bool
+    let image: String
+
     
-    init(name: String, hasBeenAdded: Bool = false) {
+    init(name: String) {
         self.name = name
-        self.hasBeenAdded = hasBeenAdded
+        self.hasBeenAdded = false
+        self.image = name
     }
 }
