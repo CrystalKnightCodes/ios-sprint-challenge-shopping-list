@@ -14,8 +14,7 @@ class SendOrderViewController: UIViewController {
     @IBOutlet weak var numberOfItemsLabel: UILabel!
     @IBOutlet weak var nameTextField: UITextField!
     @IBOutlet weak var addressTextField: UITextField!
-    @IBOutlet weak var sendOrderAction: UIButton!
-    
+   
     // MARK: - View
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -23,7 +22,11 @@ class SendOrderViewController: UIViewController {
         // Do any additional setup after loading the view.
     }
     
-
+    // MARK: - Action
+   
+    @IBAction func sendOrderAction(_ sender: UIButton) {
+    }
+    
     /*
     // MARK: - Navigation
 

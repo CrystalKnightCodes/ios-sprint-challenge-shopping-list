@@ -9,6 +9,11 @@
 import Foundation
 
 class ShoppingItem {
-    var name: String = ""
-    var hasBeenAdded: Bool = false
+    var name: String
+    var hasBeenAdded: Bool
+    
+    init(name: String, hasBeenAdded: Bool = false) {
+        self.name = name
+        self.hasBeenAdded = hasBeenAdded
+    }
 }

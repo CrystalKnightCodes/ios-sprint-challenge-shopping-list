@@ -48,7 +48,7 @@
                 </collectionViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="aEq-h4-8GW" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="944.92753623188412" y="231.69642857142856"/>
+            <point key="canvasLocation" x="867" y="232"/>
         </scene>
         <!--Send Order View Controller-->
         <scene sceneID="OLX-yL-tsI">
@@ -80,6 +80,9 @@
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OgW-ln-9Ky">
                                         <rect key="frame" x="0.0" y="183.5" width="374" height="30"/>
                                         <state key="normal" title="Send Order"/>
+                                        <connections>
+                                            <action selector="sendOrderAction:" destination="L6o-vw-dUW" eventType="touchUpInside" id="BlI-NY-3lH"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                             </stackView>
@@ -97,7 +100,6 @@
                         <outlet property="addressTextField" destination="Ipk-ob-3Vc" id="eJb-67-Ghu"/>
                         <outlet property="nameTextField" destination="1Xq-f2-HgI" id="SW4-SU-GfL"/>
                         <outlet property="numberOfItemsLabel" destination="OLV-Qn-UmN" id="cDO-O4-iQW"/>
-                        <outlet property="sendOrderAction" destination="OgW-ln-9Ky" id="a6z-Fe-ETm"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fXp-vK-SVR" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
