@@ -36,7 +36,7 @@ class ShoppingItemController {
         }
     }
     
-    // MARK: Methods
+    // MARK: - Methods
     // Switch item between added and not added
     func toggleListed(item: ShoppingItem) {
         guard let itemNumber = shoppingList.firstIndex(of: item) else { return }

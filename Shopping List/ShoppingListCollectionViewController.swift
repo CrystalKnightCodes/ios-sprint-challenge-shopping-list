@@ -15,6 +15,9 @@ class ShoppingListCollectionViewController: UICollectionViewController {
     // MARK: - Properties
     var shoppingList: [ShoppingItem] = []
     let shoppingItemController = ShoppingItemController()
+    var orderDetailViewController: SendOrderViewController?
+    let itemCell = ShoppingItemCollectionViewCell()
+    var numberOfItemsAdded = 0
     
     // MARK: - View
     override func viewDidLoad() {
@@ -33,9 +36,11 @@ class ShoppingListCollectionViewController: UICollectionViewController {
     }
 
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath)
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath) as! ShoppingItemCollectionViewCell
     
-        // Configure the cell
+        let shoppingItem = shoppingItemController.shoppingList [indexPath.item]
+    cell.item = shoppingItem
+            shoppingItemController.saveToPersistentStore()
     
         return cell
     }
@@ -61,6 +66,7 @@ class ShoppingListCollectionViewController: UICollectionViewController {
 
     // MARK: UICollectionViewDelegate
 
+    
     /*
     // Uncomment this method to specify if the specified item should be highlighted during tracking
     override func collectionView(_ collectionView: UICollectionView, shouldHighlightItemAt indexPath: IndexPath) -> Bool {
