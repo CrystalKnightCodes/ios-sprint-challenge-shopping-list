@@ -8,15 +8,17 @@
 
 import UIKit
 
-private let reuseIdentifier = "Cell"
+private let reuseIdentifier = "itemCell"
 
 class ShoppingListCollectionViewController: UICollectionViewController {
 
+    // MARK: - Properties
+    var shoppingList: [ShoppingItem] = []
+    let shoppingItemController = ShoppingItemController()
+    
+    // MARK: - View
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
 
         // Register cell classes
         self.collectionView!.register(UICollectionViewCell.self, forCellWithReuseIdentifier: reuseIdentifier)
@@ -24,27 +26,10 @@ class ShoppingListCollectionViewController: UICollectionViewController {
         // Do any additional setup after loading the view.
     }
 
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using [segue destinationViewController].
-        // Pass the selected object to the new view controller.
-    }
-    */
-
-    // MARK: UICollectionViewDataSource
-
-    override func numberOfSections(in collectionView: UICollectionView) -> Int {
-        // #warning Incomplete implementation, return the number of sections
-        return 0
-    }
-
+    // MARK: - Data Source
 
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of items
-        return 0
+        return shoppingList.count
     }
 
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
@@ -54,6 +39,25 @@ class ShoppingListCollectionViewController: UICollectionViewController {
     
         return cell
     }
+    
+    // MARK: - Navigation
+
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        switch segue.identifier {
+        case "sendOrderSegue":
+            guard let sendOrderVC = segue.destination as? SendOrderViewController else { return }
+           // sendOrderVC.
+            default:
+                fatalError("Did not find a segue")
+            }
+    }
+        
+        // Get the new view controller using [segue destinationViewController].
+        // Pass the selected object to the new view controller.
+    
+    
+
+    
 
     // MARK: UICollectionViewDelegate
 
