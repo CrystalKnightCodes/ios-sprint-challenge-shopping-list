@@ -8,7 +8,11 @@
 
 import Foundation
 
-class ShoppingItem: Codable {
+class ShoppingItem: Codable, Equatable {
+    static func == (lhs: ShoppingItem, rhs: ShoppingItem) -> Bool {
+        return true
+    }
+    
     let name: String
     var hasBeenAdded: Bool
     let image: String
