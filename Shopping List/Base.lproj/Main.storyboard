@@ -4,14 +4,15 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15404"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="collection view cell content view" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Collection View Controller-->
+        <!--Shopping List-->
         <scene sceneID="OoS-li-cg0">
             <objects>
-                <collectionViewController id="gvN-et-MBd" sceneMemberID="viewController">
+                <collectionViewController id="gvN-et-MBd" customClass="ShoppingListCollectionViewController" customModule="Shopping_List" customModuleProvider="target" sceneMemberID="viewController">
                     <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="X8O-sf-aXw">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -23,7 +24,7 @@
                             <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                         </collectionViewFlowLayout>
                         <cells>
-                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="aBl-MA-4dJ">
+                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="itemCell" id="aBl-MA-4dJ">
                                 <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="b8o-di-kz9">
@@ -37,11 +38,65 @@
                             <outlet property="delegate" destination="gvN-et-MBd" id="CWd-kj-QPO"/>
                         </connections>
                     </collectionView>
-                    <navigationItem key="navigationItem" id="Uah-CG-SNd"/>
+                    <navigationItem key="navigationItem" title="Shopping List" id="Uah-CG-SNd">
+                        <barButtonItem key="rightBarButtonItem" title="Next" id="DZI-Yr-u8u">
+                            <connections>
+                                <segue destination="L6o-vw-dUW" kind="show" identifier="sendOrderSegue" id="HeR-XU-YxJ"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                 </collectionViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="aEq-h4-8GW" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="944.92753623188412" y="231.69642857142856"/>
+        </scene>
+        <!--Send Order View Controller-->
+        <scene sceneID="OLX-yL-tsI">
+            <objects>
+                <viewController id="L6o-vw-dUW" customClass="SendOrderViewController" customModule="Shopping_List" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="KM6-0T-TPg">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="nvi-WL-eMS">
+                                <rect key="frame" x="20" y="160" width="374" height="213.5"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="You currently have # items in your shopping list." lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OLV-Qn-UmN">
+                                        <rect key="frame" x="0.0" y="0.0" width="374" height="67.5"/>
+                                        <fontDescription key="fontDescription" style="UICTFontTextStyleTitle1"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter your name:" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="1Xq-f2-HgI">
+                                        <rect key="frame" x="0.0" y="83.5" width="374" height="34"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter your address" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Ipk-ob-3Vc">
+                                        <rect key="frame" x="0.0" y="133.5" width="374" height="34"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OgW-ln-9Ky">
+                                        <rect key="frame" x="0.0" y="183.5" width="374" height="30"/>
+                                        <state key="normal" title="Send Order"/>
+                                    </button>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="9k1-FG-35c" firstAttribute="trailing" secondItem="nvi-WL-eMS" secondAttribute="trailing" constant="20" id="D80-At-FcB"/>
+                            <constraint firstItem="nvi-WL-eMS" firstAttribute="leading" secondItem="9k1-FG-35c" secondAttribute="leading" constant="20" id="Os3-UT-XRv"/>
+                            <constraint firstItem="nvi-WL-eMS" firstAttribute="top" secondItem="9k1-FG-35c" secondAttribute="top" constant="20" id="X0y-JY-8z1"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="9k1-FG-35c"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="KVm-fS-1Nx"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="fXp-vK-SVR" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1675" y="232"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="W8Q-Lw-zTY">
