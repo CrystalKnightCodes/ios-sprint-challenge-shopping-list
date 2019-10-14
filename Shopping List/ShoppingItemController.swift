@@ -9,8 +9,6 @@
 import Foundation
 
 class ShoppingItemController {
-    
-    
     // MARK: - Properties
     // Array of items
     var shoppingList: [ShoppingItem] = []

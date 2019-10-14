@@ -14,9 +14,8 @@ class ShoppingListCollectionViewController: UICollectionViewController {
 
     // MARK: - Properties
     let shoppingItemController = ShoppingItemController()
-    var orderDetailViewController: SendOrderViewController?
-    let itemCell = ShoppingItemCollectionViewCell()
-    var numberOfItemsAdded = 0
+    
+    // var numberOfItemsAdded = 0
     
     // MARK: - View
     override func viewDidLoad() {
@@ -34,6 +33,7 @@ class ShoppingListCollectionViewController: UICollectionViewController {
         return shoppingItemController.shoppingList.count
     }
 
+    // FIXME: Unable to call cell
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath) as! ShoppingItemCollectionViewCell
     
@@ -55,13 +55,7 @@ class ShoppingListCollectionViewController: UICollectionViewController {
                 fatalError("Did not find a segue")
             }
     }
-        
-        // Get the new view controller using [segue destinationViewController].
-        // Pass the selected object to the new view controller.
-    
-    
 
-    
 
     // MARK: UICollectionViewDelegate
 

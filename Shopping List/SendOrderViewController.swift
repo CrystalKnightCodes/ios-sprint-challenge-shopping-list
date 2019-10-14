@@ -10,7 +10,6 @@ import UIKit
 
 class SendOrderViewController: UIViewController {
 // MARK: - Outlets
-    
     @IBOutlet weak var numberOfItemsLabel: UILabel!
     @IBOutlet weak var nameTextField: UITextField!
     @IBOutlet weak var addressTextField: UITextField!
@@ -25,16 +24,7 @@ class SendOrderViewController: UIViewController {
     // MARK: - Action
    
     @IBAction func sendOrderAction(_ sender: UIButton) {
+        // Configure
     }
     
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }

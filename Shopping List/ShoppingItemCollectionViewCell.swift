@@ -10,18 +10,20 @@ import UIKit
 
 class ShoppingItemCollectionViewCell: UICollectionViewCell {
     
+    // MARK: - Outlets
     @IBOutlet weak var addedLabel: UILabel!
     @IBOutlet weak var imageView: UIImageView!
     @IBOutlet weak var itemNameLabel: UILabel!
     
+    // MARK: - View
     var item: ShoppingItem? {
             didSet {
                 updateViews()
             }
         }
 
-        func updateViews() {
-            guard let item = item else { return }
+    func updateViews() {
+        guard let item = item else { return }
         
             itemNameLabel.text = item.name
             if item.hasBeenAdded {
