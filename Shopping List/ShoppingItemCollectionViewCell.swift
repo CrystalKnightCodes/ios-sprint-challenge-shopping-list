@@ -24,24 +24,10 @@ class ShoppingItemCollectionViewCell: UICollectionViewCell {
 
     func updateViews() {
         guard let item = item else { return }
-        
+        // Connect Labels and ImageView to cell data
             itemNameLabel.text = item.name
             addedLabel.text = item.hasBeenAdded ? "Added" : "Not Added"
             imageView.image = UIImage(named: item.name)
     }
-    
-    // MARK: Methods
-  
-    /*func addToCart(item: ShoppingItem){
-        if let index = indexFromItem(item: item) {
-            item.hasBeenAdded.toggle()
-        }
-    }
-    private func indexFromItem(item: ShoppingItem) -> Int?{
-        guard let index = shoppingItems.firstIndex(of: item) else { return nil}
-        return index
-    }
- */
-    
 }
 

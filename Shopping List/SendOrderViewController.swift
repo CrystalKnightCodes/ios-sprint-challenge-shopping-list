@@ -9,14 +9,11 @@
 import UIKit
 
 class SendOrderViewController: UIViewController {
-// MARK: - Outlets
+    // MARK: - Outlets
     @IBOutlet weak var numberOfItemsLabel: UILabel!
     @IBOutlet weak var nameTextField: UITextField!
     @IBOutlet weak var addressTextField: UITextField!
    
-    //MARK: - Properties
-   // var addedItems = ShoppingItemController.addedItems
-
     // MARK: - View
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -31,7 +28,7 @@ class SendOrderViewController: UIViewController {
     }
     
     // MARK: - Action
-   
+    // Send alert when "Send Order" button is pressed.
     @IBAction func sendOrderAction(_ sender: UIButton) {
         
         guard let name = nameTextField.text,
@@ -40,13 +37,11 @@ class SendOrderViewController: UIViewController {
             let alert = UIAlertController(title: "Invalid Entry", message: "Please fill out both the name and address fields so we can send your order.", preferredStyle: .alert)
             alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
             self.present(alert, animated: true)
+        
         } else {
         let alert = UIAlertController(title: "Delivery for \(name).", message: "Your items will be delivered to \(address) in 15 minutes!", preferredStyle: .alert)
         alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
         self.present(alert, animated: true)
         }
     }
-    // MARK: - Methods
-
-    
 }

@@ -20,8 +20,6 @@ class ShoppingItemController {
         return documents.appendingPathComponent("Info.plist")
     }()
     
-
-    
     // MARK: - Initialize
     init() {
         if UserDefaults.standard.bool(forKey: "Initialized") {
@@ -49,7 +47,7 @@ class ShoppingItemController {
         return addedItem
     }
     
-    // Create array of not added items
+    // Create array of not added items (In case we want to sort them by hasBeenAdded later)
     func notAddedItems() -> [ShoppingItem] {
         let unaddedItem = shoppingList.filter { !$0.hasBeenAdded }
         return unaddedItem

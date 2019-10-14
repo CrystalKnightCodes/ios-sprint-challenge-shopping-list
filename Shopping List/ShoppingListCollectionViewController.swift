@@ -13,8 +13,9 @@ private let reuseIdentifier = "itemCell"
 class ShoppingListCollectionViewController: UICollectionViewController {
 
     // MARK: - Properties
+    // Initialize ShoppingItemController
     let shoppingItemController = ShoppingItemController()
-    var numberOfItemsAdded = 0
+
     
     // MARK: - View
     override func viewDidLoad() {
@@ -27,7 +28,6 @@ class ShoppingListCollectionViewController: UICollectionViewController {
         return shoppingItemController.shoppingList.count
     }
 
-    
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath) as! ShoppingItemCollectionViewCell
     
@@ -38,64 +38,21 @@ class ShoppingListCollectionViewController: UICollectionViewController {
         return cell
     }
     
-    // MARK: - Methods
-        func numberOfItems() -> Int {
-        for item in shoppingItemController.shoppingList {
-            if item.hasBeenAdded {
-                numberOfItemsAdded += 1
-            }
-        }
-        return numberOfItemsAdded
-    }
-
     // MARK: - Navigation
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         switch segue.identifier {
         case "sendOrderSegue":
-            guard let sendOrderVC = segue.destination as? SendOrderViewController else { return }
-           // sendOrderVC.
+            guard segue.destination is SendOrderViewController else { return }
             default:
                 fatalError("Did not find a segue")
-            }
+        }
     }
 
+    // Toggle cell to display "Added" or "Not Added"
     override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
        let shoppingItem = shoppingItemController.shoppingList[indexPath.item]
             shoppingItemController.toggleListed(item: shoppingItem)
         collectionView.reloadData()
     }
-
-    // MARK: UICollectionViewDelegate
-
-    
-    /*
-    // Uncomment this method to specify if the specified item should be highlighted during tracking
-    override func collectionView(_ collectionView: UICollectionView, shouldHighlightItemAt indexPath: IndexPath) -> Bool {
-        return true
-    }
-    */
-
-    /*
-    // Uncomment this method to specify if the specified item should be selected
-    override func collectionView(_ collectionView: UICollectionView, shouldSelectItemAt indexPath: IndexPath) -> Bool {
-        return true
-    }
-    */
-
-    /*
-    // Uncomment these methods to specify if an action menu should be displayed for the specified item, and react to actions performed on the item
-    override func collectionView(_ collectionView: UICollectionView, shouldShowMenuForItemAt indexPath: IndexPath) -> Bool {
-        return false
-    }
-
-    override func collectionView(_ collectionView: UICollectionView, canPerformAction action: Selector, forItemAt indexPath: IndexPath, withSender sender: Any?) -> Bool {
-        return false
-    }
-
-    override func collectionView(_ collectionView: UICollectionView, performAction action: Selector, forItemAt indexPath: IndexPath, withSender sender: Any?) {
-    
-    }
-    */
-
 }
