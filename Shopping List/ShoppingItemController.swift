@@ -20,6 +20,18 @@ class ShoppingItemController {
         return documents.appendingPathComponent("Info.plist")
     }()
     
+    // Array of added items
+    var addedItems: [ShoppingItem] {
+        let addItem = shoppingList.filter { $0.hasBeenAdded }
+        return addItem
+    }
+    
+    // Array of not added items
+    var notAddedItems: [ShoppingItem] {
+        let unaddedItem = shoppingList.filter { !$0.hasBeenAdded }
+        return unaddedItem
+    }
+    
     // MARK: - Initialize
     init() {
         if UserDefaults.standard.bool(forKey: "Initialized") {

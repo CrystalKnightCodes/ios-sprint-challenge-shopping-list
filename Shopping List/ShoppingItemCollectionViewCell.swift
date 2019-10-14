@@ -20,17 +20,28 @@ class ShoppingItemCollectionViewCell: UICollectionViewCell {
             didSet {
                 updateViews()
             }
-        }
+    }
 
     func updateViews() {
         guard let item = item else { return }
         
             itemNameLabel.text = item.name
-            if item.hasBeenAdded {
-                addedLabel.text = "Added"
-            } else {
-                addedLabel.text = "Not Added"
-            }
+            addedLabel.text = item.hasBeenAdded ? "Added" : "Not Added"
             imageView.image = UIImage(named: item.name)
+    }
+    
+    // MARK: Methods
+  
+    /*func addToCart(item: ShoppingItem){
+        if let index = indexFromItem(item: item) {
+            item.hasBeenAdded.toggle()
         }
     }
+    private func indexFromItem(item: ShoppingItem) -> Int?{
+        guard let index = shoppingItems.firstIndex(of: item) else { return nil}
+        return index
+    }
+ */
+    
+}
+

@@ -14,8 +14,7 @@ class ShoppingListCollectionViewController: UICollectionViewController {
 
     // MARK: - Properties
     let shoppingItemController = ShoppingItemController()
-    
-    // var numberOfItemsAdded = 0
+    var numberOfItemsAdded = 0
     
     // MARK: - View
     override func viewDidLoad() {
@@ -28,7 +27,7 @@ class ShoppingListCollectionViewController: UICollectionViewController {
         return shoppingItemController.shoppingList.count
     }
 
-    // FIXME: Unable to call cell
+    
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath) as! ShoppingItemCollectionViewCell
     
@@ -39,6 +38,16 @@ class ShoppingListCollectionViewController: UICollectionViewController {
         return cell
     }
     
+    // MARK: - Methods
+        func numberOfItems() -> Int {
+        for item in shoppingItemController.shoppingList {
+            if item.hasBeenAdded {
+                numberOfItemsAdded += 1
+            }
+        }
+        return numberOfItemsAdded
+    }
+
     // MARK: - Navigation
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {

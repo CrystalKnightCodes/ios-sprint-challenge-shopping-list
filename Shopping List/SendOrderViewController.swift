@@ -14,11 +14,18 @@ class SendOrderViewController: UIViewController {
     @IBOutlet weak var nameTextField: UITextField!
     @IBOutlet weak var addressTextField: UITextField!
    
+    //MARK: - Properties
+   // var addedItems = ShoppingItemController.addedItems
+
     // MARK: - View
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        updateViews()
         // Do any additional setup after loading the view.
+    }
+    
+    func updateViews() {
+        // numberOfItemsLabel.text = "You currently have \() items in your shopping list."
     }
     
     // MARK: - Action
@@ -26,5 +33,8 @@ class SendOrderViewController: UIViewController {
     @IBAction func sendOrderAction(_ sender: UIButton) {
         // Configure
     }
+   
+    // MARK: - Methods
+
     
 }
