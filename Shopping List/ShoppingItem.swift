@@ -10,7 +10,7 @@ import Foundation
 
 class ShoppingItem: Codable, Equatable {
     static func == (lhs: ShoppingItem, rhs: ShoppingItem) -> Bool {
-        return true
+        return lhs.name == rhs.name
     }
     
     let name: String
