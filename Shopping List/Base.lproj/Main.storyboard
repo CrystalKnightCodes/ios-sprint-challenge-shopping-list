@@ -31,36 +31,40 @@
                                     <rect key="frame" x="0.0" y="0.0" width="200" height="200"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="USi-Rp-RVb">
-                                            <rect key="frame" x="0.0" y="0.0" width="200" height="200"/>
+                                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="USi-Rp-RVb">
+                                            <rect key="frame" x="20" y="20" width="160" height="170"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="252" verticalCompressionResistancePriority="751" text="Added" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EhY-jc-qcS">
-                                                    <rect key="frame" x="75" y="0.0" width="50.5" height="20.5"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="160" height="20.5"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" translatesAutoresizingMaskIntoConstraints="NO" id="osC-FQ-cgR">
-                                                    <rect key="frame" x="25" y="25.5" width="150" height="150"/>
+                                                    <rect key="frame" x="0.0" y="25.5" width="160" height="119"/>
                                                     <constraints>
-                                                        <constraint firstAttribute="width" constant="150" id="DFM-4U-YUI"/>
-                                                        <constraint firstAttribute="height" constant="150" id="Xll-sl-670"/>
+                                                        <constraint firstAttribute="width" relation="lessThanOrEqual" constant="150" id="7Xl-nf-8Vz"/>
+                                                        <constraint firstAttribute="height" relation="lessThanOrEqual" constant="150" id="Xll-sl-670"/>
                                                     </constraints>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="Name" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iLO-W2-3zw">
-                                                    <rect key="frame" x="77.5" y="180.5" width="45" height="19.5"/>
+                                                    <rect key="frame" x="0.0" y="149.5" width="160" height="20.5"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="200" id="ESL-eV-ukO"/>
+                                            </constraints>
                                         </stackView>
                                     </subviews>
                                     <constraints>
-                                        <constraint firstItem="USi-Rp-RVb" firstAttribute="top" secondItem="b8o-di-kz9" secondAttribute="top" id="Li7-aV-zP2"/>
-                                        <constraint firstItem="USi-Rp-RVb" firstAttribute="leading" secondItem="b8o-di-kz9" secondAttribute="leading" id="fQM-9N-L9J"/>
-                                        <constraint firstAttribute="trailing" secondItem="USi-Rp-RVb" secondAttribute="trailing" id="jL2-us-RAM"/>
-                                        <constraint firstAttribute="bottom" secondItem="USi-Rp-RVb" secondAttribute="bottom" id="vqA-qC-sFD"/>
+                                        <constraint firstItem="USi-Rp-RVb" firstAttribute="top" relation="greaterThanOrEqual" secondItem="b8o-di-kz9" secondAttribute="top" constant="10" id="Li7-aV-zP2"/>
+                                        <constraint firstItem="USi-Rp-RVb" firstAttribute="leading" secondItem="b8o-di-kz9" secondAttribute="leading" constant="20" id="fQM-9N-L9J"/>
+                                        <constraint firstItem="USi-Rp-RVb" firstAttribute="top" secondItem="b8o-di-kz9" secondAttribute="top" constant="20" id="ftO-zL-Ym5"/>
+                                        <constraint firstAttribute="trailing" secondItem="USi-Rp-RVb" secondAttribute="trailing" constant="20" id="jL2-us-RAM"/>
+                                        <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="USi-Rp-RVb" secondAttribute="bottom" constant="10" id="vqA-qC-sFD"/>
                                     </constraints>
                                 </collectionViewCellContentView>
                                 <size key="customSize" width="200" height="200"/>
