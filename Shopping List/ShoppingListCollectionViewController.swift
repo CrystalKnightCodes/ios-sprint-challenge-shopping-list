@@ -32,8 +32,9 @@ class ShoppingListCollectionViewController: UICollectionViewController {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath) as! ShoppingItemCollectionViewCell
     
         let shoppingItem = shoppingItemController.shoppingList[indexPath.item]
-    cell.item = shoppingItem
-            shoppingItemController.saveToPersistentStore()
+        cell.item = shoppingItem
+
+        shoppingItemController.saveToPersistentStore()
     
         return cell
     }
@@ -49,10 +50,12 @@ class ShoppingListCollectionViewController: UICollectionViewController {
         }
     }
 
+    // FIXME: Only the first cell changes with cell selection.
     // Toggle cell to display "Added" or "Not Added"
     override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-       let shoppingItem = shoppingItemController.shoppingList[indexPath.item]
-            shoppingItemController.toggleListed(item: shoppingItem)
-        collectionView.reloadData()
+
+        let shoppingItem = shoppingItemController.shoppingList[indexPath.item]
+        shoppingItemController.toggleListed(item: shoppingItem)
+        collectionView.reloadItems(at: [indexPath])
     }
 }

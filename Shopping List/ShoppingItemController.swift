@@ -39,6 +39,7 @@ class ShoppingItemController {
     func toggleListed(item: ShoppingItem) {
         guard let itemNumber = shoppingList.firstIndex(of: item) else { return }
         shoppingList[itemNumber].hasBeenAdded.toggle()
+        saveToPersistentStore()
     }
     
     // Create Array of added items
