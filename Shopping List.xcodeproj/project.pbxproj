@@ -8,20 +8,28 @@
 
 /* Begin PBXBuildFile section */
 		4613E91221143BFC00E7FF73 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4613E91121143BFC00E7FF73 /* AppDelegate.swift */; };
-		4613E91421143BFC00E7FF73 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4613E91321143BFC00E7FF73 /* ViewController.swift */; };
 		4613E91721143BFC00E7FF73 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4613E91521143BFC00E7FF73 /* Main.storyboard */; };
 		4613E91921143BFD00E7FF73 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4613E91821143BFD00E7FF73 /* Assets.xcassets */; };
 		4613E91C21143BFD00E7FF73 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4613E91A21143BFD00E7FF73 /* LaunchScreen.storyboard */; };
+		BA24E6342353F6F80092DE22 /* ShoppingItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA24E6332353F6F80092DE22 /* ShoppingItem.swift */; };
+		BA24E6372353F8160092DE22 /* ShoppingItemController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA24E6362353F8160092DE22 /* ShoppingItemController.swift */; };
+		BA24E6392353F9520092DE22 /* ShoppingListCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA24E6382353F9520092DE22 /* ShoppingListCollectionViewController.swift */; };
+		BA24E63C2353FC120092DE22 /* SendOrderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA24E63B2353FC120092DE22 /* SendOrderViewController.swift */; };
+		BA24E63E23540C940092DE22 /* ShoppingItemCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA24E63D23540C940092DE22 /* ShoppingItemCollectionViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		4613E90E21143BFC00E7FF73 /* Shopping List.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Shopping List.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		4613E91121143BFC00E7FF73 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		4613E91321143BFC00E7FF73 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		4613E91621143BFC00E7FF73 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		4613E91821143BFD00E7FF73 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		4613E91B21143BFD00E7FF73 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		4613E91D21143BFD00E7FF73 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		BA24E6332353F6F80092DE22 /* ShoppingItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShoppingItem.swift; sourceTree = "<group>"; };
+		BA24E6362353F8160092DE22 /* ShoppingItemController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShoppingItemController.swift; sourceTree = "<group>"; };
+		BA24E6382353F9520092DE22 /* ShoppingListCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShoppingListCollectionViewController.swift; sourceTree = "<group>"; };
+		BA24E63B2353FC120092DE22 /* SendOrderViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SendOrderViewController.swift; sourceTree = "<group>"; };
+		BA24E63D23540C940092DE22 /* ShoppingItemCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShoppingItemCollectionViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -55,13 +63,41 @@
 			isa = PBXGroup;
 			children = (
 				4613E91121143BFC00E7FF73 /* AppDelegate.swift */,
-				4613E91321143BFC00E7FF73 /* ViewController.swift */,
 				4613E91521143BFC00E7FF73 /* Main.storyboard */,
+				BA24E63F23540C990092DE22 /* View */,
+				BA24E63A2353F9580092DE22 /* View Controller */,
+				BA24E6352353F6FD0092DE22 /* Model */,
 				4613E91821143BFD00E7FF73 /* Assets.xcassets */,
 				4613E91A21143BFD00E7FF73 /* LaunchScreen.storyboard */,
 				4613E91D21143BFD00E7FF73 /* Info.plist */,
 			);
 			path = "Shopping List";
+			sourceTree = "<group>";
+		};
+		BA24E6352353F6FD0092DE22 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				BA24E6332353F6F80092DE22 /* ShoppingItem.swift */,
+				BA24E6362353F8160092DE22 /* ShoppingItemController.swift */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+		BA24E63A2353F9580092DE22 /* View Controller */ = {
+			isa = PBXGroup;
+			children = (
+				BA24E6382353F9520092DE22 /* ShoppingListCollectionViewController.swift */,
+				BA24E63B2353FC120092DE22 /* SendOrderViewController.swift */,
+			);
+			name = "View Controller";
+			sourceTree = "<group>";
+		};
+		BA24E63F23540C990092DE22 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				BA24E63D23540C940092DE22 /* ShoppingItemCollectionViewCell.swift */,
+			);
+			name = View;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -135,8 +171,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4613E91421143BFC00E7FF73 /* ViewController.swift in Sources */,
+				BA24E6392353F9520092DE22 /* ShoppingListCollectionViewController.swift in Sources */,
+				BA24E63E23540C940092DE22 /* ShoppingItemCollectionViewCell.swift in Sources */,
+				BA24E6342353F6F80092DE22 /* ShoppingItem.swift in Sources */,
+				BA24E6372353F8160092DE22 /* ShoppingItemController.swift in Sources */,
 				4613E91221143BFC00E7FF73 /* AppDelegate.swift in Sources */,
+				BA24E63C2353FC120092DE22 /* SendOrderViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
